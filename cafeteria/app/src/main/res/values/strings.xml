@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cafeteria</string>
+    <string name="lblBebida">Categorias:</string>
+    <string name="lblBtnOk">OK</string>lblTxtSelecionado
+    <string name="lblTxtSelecionado">Você selecionou:</string>
+    <string-array name="categorias">
+        <item>Bebidas</item>
+        <item>Lanches Salgados</item>
+        <item>Lanches Doces</item>
+    </string-array>
+</resources>

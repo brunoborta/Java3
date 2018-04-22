@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/menu_lateral_header">
+        <menu>
+            <item
+                android:id="@+id/nav_lista"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_lista" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_edit"
+                android:title="@string/menu_editar" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_visualizar" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/menu_cadastrar" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Seu Buraquinho</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Bruno "Borta" Bortagaray</string>
+    <string name="nav_header_subtitle">bruno.bortagaray@objectedge.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_share">Compartilhar</string>
+
+    <!-- Itens do Menu Lateral -->
+    <string name="menu_lateral_header">Suas Configuracoes</string>
+    <string name="menu_lista">Listar</string>
+    <string name="menu_editar">Editar Cadastro</string>
+    <string name="menu_visualizar">Visualizar Fotos</string>
+    <string name="menu_cadastrar">Cadastrar Foto</string>
+
+    <!-- Strings da intenção Listar do menu lateral -->
+    <string name="titulo">Título do Card</string>
+    <string name="texto">Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card </string>
+</resources>

@@ -16,6 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity
@@ -27,10 +31,34 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Cria a lista principal e aplica ela
+        final ListView listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
+        // Cria o listener de click
+        listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String posicaoEndereco = (String) listaBuracos.getItemAtPosition(position);
+                Toast.makeText(MainActivity.this, "Clicando no endereco: " + posicaoEndereco, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
+                startActivity(intent);
+            }
+        });
+//        listaBuracos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(MainActivity.this, "Clicando no endereco", Toast.LENGTH_LONG).show();
+//            }
+//        });
+        String[] listaPrincipal = {"Rua lalala", "Av. lalala", "Travessa lalala"};
+        ArrayAdapter<String> adapterLista = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPrincipal);
+        listaBuracos.setAdapter(adapterLista);
+
+        // Cria o menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Botaozinho de adicionar (+)
+        // Cria o botão flutuante
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

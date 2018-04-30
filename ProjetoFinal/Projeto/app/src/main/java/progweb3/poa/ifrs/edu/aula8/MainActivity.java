@@ -38,18 +38,14 @@ public class MainActivity extends AppCompatActivity
         listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String posicaoEndereco = (String) listaBuracos.getItemAtPosition(position);
+                String posicaoEndereco;
+                posicaoEndereco = (String)listaBuracos.getItemAtPosition(position);
                 Toast.makeText(MainActivity.this, "Clicando no endereco: " + posicaoEndereco, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
                 startActivity(intent);
             }
         });
-//        listaBuracos.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(MainActivity.this, "Clicando no endereco", Toast.LENGTH_LONG).show();
-//            }
-//        });
+
         String[] listaPrincipal = {"Rua lalala", "Av. lalala", "Travessa lalala"};
         ArrayAdapter<String> adapterLista = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPrincipal);
         listaBuracos.setAdapter(adapterLista);

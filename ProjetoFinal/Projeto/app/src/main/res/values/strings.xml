@@ -18,4 +18,14 @@
     <!-- Strings da intenção Listar do menu lateral -->
     <string name="titulo">Título do Card</string>
     <string name="texto">Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card Texto do Card </string>
+
+    <!-- Strings do formulario do seu buraquinho -->
+    <string name="titleCadastro">Cadastro de Buraco</string>
+    <string name="lblLogradouro">Logradouro</string>
+    <string name="lblNumero">Numero</string>
+    <string name="lblLat">Latitude</string>
+    <string name="lblLon">Longitude</string>
+    <string name="lblDescricao">Descrição</string>
+    <string name="btnSalvar">Cadastrar Seu Buraquinho</string>
+    <string name="btnEditar">Editar Seu Buraquinho</string>
 </resources>

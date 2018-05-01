@@ -26,7 +26,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".DetalheActivity"></activity>
+        <activity android:name=".DetalheActivity" />
+        <activity android:name=".BuracoFormularioActivity"></activity>
     </application>
 
 </manifest>

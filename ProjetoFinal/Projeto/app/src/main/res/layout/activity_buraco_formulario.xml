@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editLogradouro"
+            android:id="@+id/editEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -35,7 +35,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="@string/lblLogradouro"
+            android:hint="@string/lblEndereco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             android:hint="@string/lblNumero"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editLogradouro" />
+            app:layout_constraintTop_toBottomOf="@+id/editEndereco" />
 
         <ImageButton
             android:id="@+id/cadastroImagem"

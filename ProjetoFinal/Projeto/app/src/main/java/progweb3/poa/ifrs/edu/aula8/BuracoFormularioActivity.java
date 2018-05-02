@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager;
 
 public class BuracoFormularioActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

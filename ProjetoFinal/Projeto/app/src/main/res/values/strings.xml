@@ -21,7 +21,7 @@
 
     <!-- Strings do formulario do seu buraquinho -->
     <string name="titleCadastro">Cadastro de Buraco</string>
-    <string name="lblLogradouro">Logradouro</string>
+    <string name="lblEndereco">Endereço</string>
     <string name="lblNumero">Numero</string>
     <string name="lblLat">Latitude</string>
     <string name="lblLon">Longitude</string>

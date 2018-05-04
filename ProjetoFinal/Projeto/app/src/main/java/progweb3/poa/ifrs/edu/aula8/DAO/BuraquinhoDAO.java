@@ -12,10 +12,6 @@ import java.util.List;
 
 import progweb3.poa.ifrs.edu.aula8.model.Buraquinho;
 
-/**
- * Created by 0724122 on 24/04/2018.
- */
-
 public class BuraquinhoDAO extends SQLiteOpenHelper {
 
     public BuraquinhoDAO(Context context) {
@@ -25,12 +21,12 @@ public class BuraquinhoDAO extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sqlCriacao = "CREATE TABLE buraquinho(" +
-                "id INTEGER PRIMARY KEY, " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "endereco TEXT NOT NULL," +
-                "numero INTEGER NOT NULL" +
-                "lat TEXT NOT NULL" +
-                "lon TEXT NOT NULL" +
-                "descricao TEXT" +
+                "numero INTEGER NOT NULL," +
+                "lat TEXT NOT NULL," +
+                "lon TEXT NOT NULL," +
+                "descricao TEXT," +
                 "imagem TEXT);";
         db.execSQL(sqlCriacao);
     }
@@ -70,6 +66,19 @@ public class BuraquinhoDAO extends SQLiteOpenHelper {
         return lista;
     }
 
+    public void delete(Buraquinho buraquinho){
+        SQLiteDatabase db = getReadableDatabase();
+        String[] parametros = {buraquinho.getId().toString()};
+        db.delete("buraquinho", "id = ?", parametros);
+    }
+
+    public void update(Buraquinho buraquinho){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues dados = carregaDados(buraquinho);
+        String[] parametros = {buraquinho.getId().toString()};
+        db.update("buraquinho", dados, "id = ?", parametros);
+    }
+
     @NonNull
     private ContentValues carregaDados(Buraquinho buraquinho) {
         ContentValues dados = new ContentValues();
@@ -81,5 +90,4 @@ public class BuraquinhoDAO extends SQLiteOpenHelper {
         dados.put("imagem", buraquinho.getImagem());
         return dados;
     }
-
 }

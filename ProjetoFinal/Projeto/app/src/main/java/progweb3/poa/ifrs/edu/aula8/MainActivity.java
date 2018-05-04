@@ -21,11 +21,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.List;
+
+import progweb3.poa.ifrs.edu.aula8.DAO.BuraquinhoDAO;
+import progweb3.poa.ifrs.edu.aula8.model.Buraquinho;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ShareActionProvider mShareActionProvider;
+    private ListView listaBuracos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,22 +39,40 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         // Cria a lista principal e aplica ela
-        final ListView listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
-        // Cria o listener de click
+        listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
+
         listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String posicaoEndereco;
-                posicaoEndereco = (String)listaBuracos.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, "Clicando no endereco: " + posicaoEndereco, Toast.LENGTH_LONG).show();
+                Buraquinho buraquinhoSelecionado = (Buraquinho) listaBuracos.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
+                intent.putExtra("buraquinho", buraquinhoSelecionado);
                 startActivity(intent);
             }
         });
+//        Moto moto = (Moto) listaMotos.getItemAtPosition(info.position);
+//        Intent intent = new Intent(ListaMoto.this, FormularioCadastroMoto.class);
+//        intent.putExtra("moto", moto);
+//        startActivity(intent);
 
-        String[] listaPrincipal = {"Rua lalala", "Av. lalala", "Travessa lalala"};
-        ArrayAdapter<String> adapterLista = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPrincipal);
-        listaBuracos.setAdapter(adapterLista);
+//        final ListView listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
+//        // Cria o listener de click
+//        listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String posicaoEndereco;
+//                posicaoEndereco = (String)listaBuracos.getItemAtPosition(position);
+//                Toast.makeText(MainActivity.this, "Clicando no endereco: " + posicaoEndereco, Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        String[] listaPrincipal = {"Rua lalala", "Av. lalala", "Travessa lalala"};
+//        ArrayAdapter<String> adapterLista = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPrincipal);
+//        listaBuracos.setAdapter(adapterLista);
+
+
 
         // Cria o menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -76,6 +100,13 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregaListaBuraquinhos();
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -95,10 +126,6 @@ public class MainActivity extends AppCompatActivity
 
         // Busca e armazena o ShareActionProvider
         mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
-
-
-
-
 
         return true;
     }
@@ -150,5 +177,13 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void carregaListaBuraquinhos() {
+        BuraquinhoDAO dao = new BuraquinhoDAO(this);
+        List<Buraquinho> buraquinhos = dao.listaTodos();
+        dao.close();
+        ArrayAdapter<Buraquinho> adapter = new ArrayAdapter<Buraquinho>(this, android.R.layout.simple_list_item_1, buraquinhos);
+        listaBuracos.setAdapter(adapter);
     }
 }

@@ -26,12 +26,13 @@ public class BuraquinhoHelper {
         buraquinho = new Buraquinho();
     }
 
-    public Buraquinho getBuraquinho() {
+    Buraquinho getBuraquinho() {
         buraquinho.setEndereco(editEndereco.getText().toString());
         buraquinho.setNumero(Integer.parseInt(editNumero.getText().toString()));
         buraquinho.setLon(editLon.getText().toString());
         buraquinho.setLat(editLat.getText().toString());
         buraquinho.setDescricao(editDescricao.getText().toString());
+        buraquinho.toFullString();
         return buraquinho;
     }
 

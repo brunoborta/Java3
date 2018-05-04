@@ -28,4 +28,12 @@
     <string name="lblDescricao">Descrição</string>
     <string name="btnSalvar">Cadastrar Seu Buraquinho</string>
     <string name="btnEditar">Editar Seu Buraquinho</string>
+
+    <!-- Strings do detalhe do seu buraquinho -->
+    <string name="titleDetalhe">Detalhe de Buraco</string>
+    <string name="titleEnderecoNumero">Endereço e Número:</string>
+    <string name="titleLatitude">Latitude:</string>
+    <string name="titleLongitude">Lontitude:</string>
+    <string name="titleDescricao">Descrição:</string>
+    <string name="btnImportancia">Dar Importancia!</string>
 </resources>

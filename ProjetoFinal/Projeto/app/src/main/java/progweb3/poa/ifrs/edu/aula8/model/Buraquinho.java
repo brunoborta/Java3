@@ -78,4 +78,8 @@ public class Buraquinho implements Serializable {
     public String toString() {
         return endereco + ", " + numero;
     }
+
+    public String toFullString() {
+        return "Buraquinho{" + "id=" + id + ", endereco='" + endereco + '\'' + ", numero=" + numero + ", lat='" + lat + '\'' + ", lon='" + lon + '\'' + ", descricao='" + descricao + '\'' + ", imagem='" + imagem + '\'' + '}';
+    }
 }

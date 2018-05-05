@@ -21,6 +21,13 @@ public class BuracoFormularioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_buraco_formulario);
 
         helper = new BuraquinhoHelper(this);
+
+        Intent intent = getIntent(); // pega os dados que vem da lista
+        Buraquinho buraquinho = (Buraquinho) intent.getSerializableExtra("buraquinho");
+        if(buraquinho != null){
+            helper.preencheFormulario(buraquinho);
+        }
+
         // Botao que vai salvar no banco
         final Button button = findViewById(R.id.editButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +35,11 @@ public class BuracoFormularioActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Buraquinho buraquinho = helper.getBuraquinho();
                 BuraquinhoDAO dao = new BuraquinhoDAO(BuracoFormularioActivity.this);
-                dao.insert(buraquinho);
+                if(buraquinho.getId() != null) {
+                    dao.update(buraquinho);
+                } else {
+                    dao.insert(buraquinho);
+                }
                 dao.close();
                 Toast.makeText(BuracoFormularioActivity.this, "Seu Buraquinho foi salvo!", Toast.LENGTH_SHORT).show();
                 finish();

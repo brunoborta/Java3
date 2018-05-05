@@ -16,10 +16,10 @@
             android:id="@+id/btnDetalheImportancia"
             android:layout_width="233dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4780dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:background="@color/primaryWarningColor"
             android:text="@string/btnImportancia"
             android:textColor="@color/primaryTextColor"
@@ -28,7 +28,7 @@
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescricao"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/titleDescricao"
@@ -43,8 +43,8 @@
 
         <TextView
             android:id="@+id/textDescricao"
-            android:layout_width="358dp"
-            android:layout_height="94dp"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="txtDesc"
@@ -57,11 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="@string/titleEnderecoNumero"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleDetalheBuraco" />
 
@@ -69,29 +69,26 @@
             android:id="@+id/titleDetalheBuraco"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:text="@string/titleDetalhe"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.141" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textEndereco"
-            android:layout_width="345dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:text="txtEnd"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.347"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleDescricaoEndereco" />
 
@@ -121,7 +118,7 @@
             android:layout_width="100dp"
             android:layout_height="17dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="152dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="txtLon"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,12 +130,12 @@
             android:layout_width="wrap_content"
             android:layout_height="18dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/titleLongitude"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.519"
             app:layout_constraintStart_toEndOf="@+id/titleLatitude"
             app:layout_constraintTop_toBottomOf="@+id/textEndereco" />
     </android.support.constraint.ConstraintLayout>

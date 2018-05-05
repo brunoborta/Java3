@@ -11,8 +11,8 @@
     <!-- Itens do Menu Lateral -->
     <string name="menu_lateral_header">Suas Configuracoes</string>
     <string name="menu_lista">Listar</string>
-    <string name="menu_editar">Editar Cadastro</string>
-    <string name="menu_visualizar">Visualizar Fotos</string>
+    <string name="menu_edit_cad">Editar Cadastro</string>
+    <string name="menu_edit_foto">Editar Suas Fotos</string>
     <string name="menu_cadastrar">Cadastrar Foto</string>
 
     <!-- Strings da intenção Listar do menu lateral -->

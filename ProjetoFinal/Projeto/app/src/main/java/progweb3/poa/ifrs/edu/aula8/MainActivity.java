@@ -3,7 +3,6 @@ package progweb3.poa.ifrs.edu.aula8;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
@@ -19,7 +18,6 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -162,16 +160,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        System.out.println(id);
         if (id == R.id.nav_lista) {
             // Handle the camera action
             Intent i = new Intent(MainActivity.this, ListaCard.class);
             startActivity(i);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_edit_cad) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_edit_foto) {
+            Intent intent = new Intent(MainActivity.this, EditarBuraquinhoActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_cad_foto) {
+            Intent intent = new Intent(MainActivity.this, BuracoFormularioActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -43,12 +48,32 @@ public class EditarBuraquinhoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        registerForContextMenu(listaBuracos);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         carregaListaBuraquinhos();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo) {
+        MenuItem deletar = menu.add("Deletar");
+        deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Buraquinho buraquinhoSelecionado = (Buraquinho) listaBuracos.getItemAtPosition(info.position);
+                BuraquinhoDAO dao = new BuraquinhoDAO(EditarBuraquinhoActivity.this);
+                dao.delete(buraquinhoSelecionado);
+                dao.close();
+                Toast.makeText(EditarBuraquinhoActivity.this, "Item Deletado!", Toast.LENGTH_LONG).show();
+                carregaListaBuraquinhos();
+                return false;
+            }
+        });
     }
 
     private void carregaListaBuraquinhos() {

@@ -31,7 +31,7 @@ public class DetalheActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DetalheActivity.this, "Voce deu importancia para esse buraquinho!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DetalheActivity.this, "Voce deu importancia para esse buraquinho!", Toast.LENGTH_LONG).show();
             }
         });
 

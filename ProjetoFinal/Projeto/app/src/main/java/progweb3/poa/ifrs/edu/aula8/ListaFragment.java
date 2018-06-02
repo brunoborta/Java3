@@ -70,7 +70,14 @@ public class ListaFragment extends DialogFragment {
         BuraquinhoDAO dao = new BuraquinhoDAO(getActivity());
         List<Buraquinho> buraquinhos = dao.listaTodos();
         dao.close();
-        ArrayAdapter<Buraquinho> adapter = new ArrayAdapter<Buraquinho>(getActivity(), android.R.layout.simple_list_item_1, buraquinhos);
+        ArrayAdapter<Buraquinho> adapter = new ArrayAdapter<Buraquinho>((MainActivity) getActivity(), android.R.layout.simple_list_item_1, buraquinhos);
         listaBuracos.setAdapter(adapter);
+    }
+
+    @Override
+    // Sera chamado no onResume da atividade principal
+    public void onResume() {
+        super.onResume();
+        carregaListaBuraquinhos();
     }
 }

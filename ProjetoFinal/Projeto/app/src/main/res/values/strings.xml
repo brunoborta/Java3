@@ -10,7 +10,7 @@
 
     <!-- Itens do Menu Lateral -->
     <string name="menu_lateral_header">Suas Configuracoes</string>
-    <string name="menu_lista">Listar</string>
+    <string name="menu_lista">Listar Buraquinhos</string>
     <string name="menu_edit_cad">Editar Cadastro</string>
     <string name="menu_edit_foto">Editar Suas Fotos</string>
     <string name="menu_cadastrar">Cadastrar Foto</string>
@@ -36,4 +36,7 @@
     <string name="titleLongitude">Lontitude:</string>
     <string name="titleDescricao">Descrição:</string>
     <string name="btnImportancia">Dar Importancia!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

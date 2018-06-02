@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
 import android.view.View;
@@ -36,57 +37,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Cria a lista principal e aplica ela
-        listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
-
-        listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Buraquinho buraquinhoSelecionado = (Buraquinho) listaBuracos.getItemAtPosition(position);
-                Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
-                intent.putExtra("buraquinho", buraquinhoSelecionado);
-                startActivity(intent);
-            }
-        });
-//        Moto moto = (Moto) listaMotos.getItemAtPosition(info.position);
-//        Intent intent = new Intent(ListaMoto.this, FormularioCadastroMoto.class);
-//        intent.putExtra("moto", moto);
-//        startActivity(intent);
-
-//        final ListView listaBuracos = (ListView) findViewById(R.id.lista_buraquinho);
-//        // Cria o listener de click
-//        listaBuracos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String posicaoEndereco;
-//                posicaoEndereco = (String)listaBuracos.getItemAtPosition(position);
-//                Toast.makeText(MainActivity.this, "Clicando no endereco: " + posicaoEndereco, Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        String[] listaPrincipal = {"Rua lalala", "Av. lalala", "Travessa lalala"};
-//        ArrayAdapter<String> adapterLista = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPrincipal);
-//        listaBuracos.setAdapter(adapterLista);
-
-
-
         // Cria o menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Cria o botão flutuante
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-                Intent intent = new Intent(MainActivity.this, BuracoFormularioActivity.class);
-                startActivity(intent);
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -102,7 +55,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        carregaListaBuraquinhos();
     }
 
     @Override
@@ -162,15 +114,20 @@ public class MainActivity extends AppCompatActivity
 
         System.out.println(id);
         if (id == R.id.nav_lista) {
-            // Handle the camera action
-            Intent i = new Intent(MainActivity.this, ListaCard.class);
-            startActivity(i);
+            // Listar todos os buracos
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            ListaFragment fragment = new ListaFragment();
+            transaction.replace(R.id.fragmento, fragment);
+            transaction.commit();
         } else if (id == R.id.nav_edit_cad) {
+            // Editar informaçoes pessoais
 
         } else if (id == R.id.nav_edit_foto) {
+            // Editar informaçoes pessoais
             Intent intent = new Intent(MainActivity.this, EditarBuraquinhoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cad_foto) {
+            // Entra direto no formulario
             Intent intent = new Intent(MainActivity.this, BuracoFormularioActivity.class);
             startActivity(intent);
         }
@@ -178,13 +135,5 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void carregaListaBuraquinhos() {
-        BuraquinhoDAO dao = new BuraquinhoDAO(this);
-        List<Buraquinho> buraquinhos = dao.listaTodos();
-        dao.close();
-        ArrayAdapter<Buraquinho> adapter = new ArrayAdapter<Buraquinho>(this, android.R.layout.simple_list_item_1, buraquinhos);
-        listaBuracos.setAdapter(adapter);
     }
 }

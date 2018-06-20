@@ -1,9 +1,9 @@
 {
     "tipos": [
-	    "Cratera", 
-	    "Buraco Raso", 
-	    "Vala", 
-	    "Buraco Negro", 
-	    "Poça d'agua com 13 metro de fundura"
+	    {"nome":"Cratera"}, 
+	    {"nome":"Buraco Raso"}, 
+	    {"nome": "Vala"}, 
+	    {"nome":"Buraco Negro"}, 
+	    {"nome":"Poça d'agua com 13 metro de fundura"}
     ]
 }

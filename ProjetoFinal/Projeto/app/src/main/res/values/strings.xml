@@ -12,8 +12,10 @@
     <string name="menu_lateral_header">Suas Configuracoes</string>
     <string name="menu_lista">Listar Buraquinhos</string>
     <string name="menu_edit_cad">Editar Cadastro</string>
-    <string name="menu_edit_foto">Editar Suas Fotos</string>
+    <string name="menu_edit_foto">Editar Seus Buracos</string>
     <string name="menu_cadastrar">Cadastrar Foto</string>
+    <string name="menu_tipos">Tipos de Buracos</string>
+    <string name="menu_picasso">Picasso</string>
 
     <!-- Strings da intenção Listar do menu lateral -->
     <string name="titulo">Título do Card</string>
@@ -26,8 +28,7 @@
     <string name="lblLat">Latitude</string>
     <string name="lblLon">Longitude</string>
     <string name="lblDescricao">Descrição</string>
-    <string name="btnSalvar">Cadastrar Seu Buraquinho</string>
-    <string name="btnEditar">Editar Seu Buraquinho</string>
+    <string name="btnSalvar">Salvar</string>
 
     <!-- Strings do detalhe do seu buraquinho -->
     <string name="titleDetalhe">Detalhe de Buraco</string>

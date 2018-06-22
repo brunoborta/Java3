@@ -130,6 +130,16 @@ public class MainActivity extends AppCompatActivity
             // Entra direto no formulario
             Intent intent = new Intent(MainActivity.this, BuracoFormularioActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_cad_tipos) {
+            // Carrega JSON
+            Intent intent = new Intent(MainActivity.this, TiposBuracosActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_picasso) {
+            // Carrega imagem do Picasso
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            PicassoFragment fragment = new PicassoFragment();
+            transaction.replace(R.id.fragmento, fragment);
+            transaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

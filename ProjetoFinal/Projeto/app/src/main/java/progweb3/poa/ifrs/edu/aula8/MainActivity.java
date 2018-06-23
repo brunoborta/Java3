@@ -140,6 +140,10 @@ public class MainActivity extends AppCompatActivity
             PicassoFragment fragment = new PicassoFragment();
             transaction.replace(R.id.fragmento, fragment);
             transaction.commit();
+        } else if (id == R.id.nav_gmap) {
+            // Carrega mapa do GMaps
+            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(intent);
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

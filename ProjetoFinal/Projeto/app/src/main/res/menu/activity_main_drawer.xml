@@ -29,6 +29,10 @@
                 android:id="@+id/nav_picasso"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="@string/menu_picasso" />
+            <item
+                android:id="@+id/nav_gmap"
+                android:icon="@drawable/ic_menu_place"
+                android:title="@string/menu_mapa" />
         </menu>
     </item>
 </menu>

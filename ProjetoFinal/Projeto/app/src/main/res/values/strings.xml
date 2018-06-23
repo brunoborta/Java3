@@ -16,6 +16,7 @@
     <string name="menu_cadastrar">Cadastrar Foto</string>
     <string name="menu_tipos">Tipos de Buracos</string>
     <string name="menu_picasso">Picasso</string>
+    <string name="menu_mapa">Picasso</string>
 
     <!-- Strings da intenção Listar do menu lateral -->
     <string name="titulo">Título do Card</string>
@@ -38,6 +39,5 @@
     <string name="titleDescricao">Descrição:</string>
     <string name="btnImportancia">Dar Importancia!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

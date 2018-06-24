@@ -10,12 +10,8 @@
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="@string/menu_lista" />
             <item
-                android:id="@+id/nav_edit_cad"
-                android:icon="@drawable/ic_menu_edit"
-                android:title="@string/menu_edit_cad" />
-            <item
                 android:id="@+id/nav_edit_foto"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/ic_menu_edit"
                 android:title="@string/menu_edit_foto" />
             <item
                 android:id="@+id/nav_cad_foto"
@@ -33,6 +29,10 @@
                 android:id="@+id/nav_gmap"
                 android:icon="@drawable/ic_menu_place"
                 android:title="@string/menu_mapa" />
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/ic_menu_sign_out"
+                android:title="@string/menu_sign_out" />
         </menu>
     </item>
 </menu>

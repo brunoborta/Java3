@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "617273937386",
+    "firebase_url": "https://seuburaquinho.firebaseio.com",
+    "project_id": "seuburaquinho",
+    "storage_bucket": "seuburaquinho.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617273937386:android:4a9c158e26d7da0b",
+        "android_client_info": {
+          "package_name": "progweb3.poa.ifrs.edu.aula8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617273937386-om48idjkl3p0h3t22quofm94jb3mknvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "progweb3.poa.ifrs.edu.aula8",
+            "certificate_hash": "3569f580fddd39b98f8ba726324a5b7f934f534b"
+          }
+        },
+        {
+          "client_id": "617273937386-p7pl105ni56h5ofv5ma89643nno08es1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm5wDymYAZBQI5rgTZ35dqtTUJSnkyFig"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617273937386-p7pl105ni56h5ofv5ma89643nno08es1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

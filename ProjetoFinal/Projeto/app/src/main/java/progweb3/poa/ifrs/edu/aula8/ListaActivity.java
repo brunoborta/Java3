@@ -147,9 +147,6 @@ public class ListaActivity extends AppCompatActivity
 //            ListaRecyclerFragment fragment = new ListaRecyclerFragment();
 //            transaction.replace(R.id.fragmento, fragment);
             transaction.commit();
-        } else if (id == R.id.nav_edit_cad) {
-            // Editar informaçoes pessoais
-
         } else if (id == R.id.nav_edit_foto) {
             // Editar informaçoes pessoais
             Intent intent = new Intent(ListaActivity.this, EditarBuraquinhoActivity.class);

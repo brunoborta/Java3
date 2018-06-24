@@ -2,12 +2,10 @@ package progweb3.poa.ifrs.edu.aula8;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,23 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import progweb3.poa.ifrs.edu.aula8.DAO.BuraquinhoDAO;
-import progweb3.poa.ifrs.edu.aula8.model.Buraquinho;
-
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ShareActionProvider mShareActionProvider;
-    private ListView listaBuracos;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.drawer_layout) DrawerLayout drawer;
@@ -119,11 +108,8 @@ public class MainActivity extends AppCompatActivity
             ListaFragment fragment = new ListaFragment();
             transaction.replace(R.id.fragmento, fragment);
             transaction.commit();
-        } else if (id == R.id.nav_edit_cad) {
-            // Editar informaçoes pessoais
-
         } else if (id == R.id.nav_edit_foto) {
-            // Editar informaçoes pessoais
+            // Editar Seus Buraquinho
             Intent intent = new Intent(MainActivity.this, EditarBuraquinhoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cad_foto) {
@@ -144,6 +130,9 @@ public class MainActivity extends AppCompatActivity
             // Carrega mapa do GMaps
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_signout) {
+            // Mata a MainActivity e volta pro Login
+            finish();
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

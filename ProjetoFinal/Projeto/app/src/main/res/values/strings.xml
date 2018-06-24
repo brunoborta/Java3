@@ -11,12 +11,12 @@
     <!-- Itens do Menu Lateral -->
     <string name="menu_lateral_header">Suas Configuracoes</string>
     <string name="menu_lista">Listar Buraquinhos</string>
-    <string name="menu_edit_cad">Editar Cadastro</string>
-    <string name="menu_edit_foto">Editar Seus Buracos</string>
-    <string name="menu_cadastrar">Cadastrar Foto</string>
-    <string name="menu_tipos">Tipos de Buracos</string>
-    <string name="menu_picasso">Picasso</string>
-    <string name="menu_mapa">Picasso</string>
+    <string name="menu_edit_foto">Editar Seu Buraquinho</string>
+    <string name="menu_cadastrar">Cadastrar Seu Buraquinho</string>
+    <string name="menu_tipos">Tipos de Buraquinho</string>
+    <string name="menu_picasso">Mostrar o Picasso</string>
+    <string name="menu_mapa">Google Maps</string>
+    <string name="menu_sign_out">Sair</string>
 
     <!-- Strings da intenção Listar do menu lateral -->
     <string name="titulo">Título do Card</string>
@@ -39,5 +39,18 @@
     <string name="titleDescricao">Descrição:</string>
     <string name="btnImportancia">Dar Importancia!</string>
 
+    <!-- Strings do Login e Cadastro -->
+    <string name="login_titulo">LOGIN</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_pwd">Senha</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="login_cadastro">Cadastre-se</string>
+    <string name="cadUser_titulo">CADASTRAR USUÁRIO</string>
+    <string name="login_cpwd">Confirme sua Senha</string>
+    <string name="cadUser_btnCad">CADASTRAR</string>
+    <string name="cadUser_btnCanc">CANCELAR</string>
+    <string name="title_activity_principal">Principal</string>
+
+    <!-- Google Maps -->
     <string name="title_activity_maps">Map</string>
 </resources>
